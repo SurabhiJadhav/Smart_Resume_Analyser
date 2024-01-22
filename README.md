@@ -119,23 +119,24 @@ attack by Internet-based threats
 
 ## ⭐PDF Extracting Code
 This code is used for the PDF extraction; it will extract the Pdf of resume which is uploaded by the user.
-def pdf_reader(file):
-    resource_manager = PDFResourceManager()
-    fake_file_handle = io.StringIO()
-    converter = TextConverter(resource_manager, fake_file_handle, laparams=LAParams())
-    page_interpreter = PDFPageInterpreter(resource_manager, converter)
-    with open(file, 'rb') as fh:
-        for page in PDFPage.get_pages(fh,
-                                        caching=True,
-                                        check_extractable=True):
-            page_interpreter.process_page(page)
-            print(page)
-        text = fake_file_handle.getvalue()
 
-    # close open handles
-    converter.close()
-    fake_file_handle.close()
-    return text
+    # def pdf_reader(file):
+        resource_manager = PDFResourceManager()
+        fake_file_handle = io.StringIO()
+        converter = TextConverter(resource_manager, fake_file_handle, laparams=LAParams())
+        page_interpreter = PDFPageInterpreter(resource_manager, converter)
+        with open(file, 'rb') as fh:
+            for page in PDFPage.get_pages(fh,
+                                            caching=True,
+                                            check_extractable=True):
+                page_interpreter.process_page(page)
+                print(page)
+            text = fake_file_handle.getvalue()
+    
+        # close open handles
+        converter.close()
+        fake_file_handle.close()
+        return text
 
 ## ⭐ Recommender Code
 This code is used for the course recommender, it will fetch the user’s skills, based on that skills it will give the recommendations.
