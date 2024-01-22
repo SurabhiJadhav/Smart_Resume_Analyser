@@ -31,7 +31,7 @@ Selection of the Software with Justification: -
     ̶  XAMP
     ̶  GitHub 
 
-## Tools & Technologies: -
+#### Tools & Technologies: -
 
 🔹 NLTK & Pyparser for NLP:
 NLTK can be used for:
@@ -116,3 +116,66 @@ STEP 10: END
 ◾ Web application security refers to a variety of processes, technologies, or methods 
 for protecting web servers, web applications, and web services such as APIs from 
 attack by Internet-based threats
+
+## ⭐PDF Extracting Code
+This code is used for the PDF extraction; it will extract the Pdf of resume which is uploaded by the user.
+def pdf_reader(file):
+    resource_manager = PDFResourceManager()
+    fake_file_handle = io.StringIO()
+    converter = TextConverter(resource_manager, fake_file_handle, laparams=LAParams())
+    page_interpreter = PDFPageInterpreter(resource_manager, converter)
+    with open(file, 'rb') as fh:
+        for page in PDFPage.get_pages(fh,
+                                        caching=True,
+                                        check_extractable=True):
+            page_interpreter.process_page(page)
+            print(page)
+        text = fake_file_handle.getvalue()
+
+    # close open handles
+    converter.close()
+    fake_file_handle.close()
+    return text
+
+## ⭐ Recommender Code
+This code is used for the course recommender, it will fetch the user’s skills, based on that skills it will give the recommendations.
+
+def course_recommender(course_list):
+    st.subheader("**Courses & Certificates🎓 Recommendations**")
+    rec_course = []
+    no_of_reco = st.slider('Choose Number of Course Recommendations:', 1, 10, 4)
+    random.shuffle(course_list)
+    for c_name, c_link in course_list:
+        c += 1
+        st.markdown(f"({c}) [{c_name}]({c_link})")
+        rec_course.append(c_name)
+        if c == no_of_reco:
+            break
+    return rec_course
+
+## ⭐ PDF Showing Code
+This code is used to show the uploaded resume in the user interface, it simply allows to display the uploaded resume into the system.
+def show_pdf(file_path):
+    with open(file_path, "rb") as f:
+        base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+    # pdf_display = f'<embed src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf">'
+    pdf_display = F'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
+    st.markdown(pdf_display, unsafe_allow_html=True)
+
+## ⭐ Insert user’s Data Code
+This code is used to insert the user data into our database.
+Definsert_data(name,email,mobile,timestamp,no_of_pages,reco_field,cand_level,skills,recommended_skills,courses):
+    DB_table_name = 'user_data'
+    insert_sql = "insert into " + DB_table_name + """
+    values (0,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
+    rec_values = (name, email, str(mobile), timestamp,str(no_of_pages), reco_field, cand_level, skills,recommended_skills,courses)
+    cursor.execute(insert_sql, rec_values)
+    connection.commit()
+
+## ⭐ Visualization Code (Pie Chart)
+This code is used display the Pie Chart for data analytics.
+labels = plot_data.Predicted_Field.unique()
+values = plot_data.Predicted_Field.value_counts()
+st.subheader("**Pie-Chart📈 for Predicted Field Recommendations**")
+fig = px.pie(df, values=values, names=labels, title='Predicted Field according to the Skills')
+st.plotly_chart(fig)
