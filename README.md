@@ -87,3 +87,19 @@ It is open source control panel which is easy to use and maintain the
 apache, database, and PhpMyAdmin. It is very easy to operate. We can 
 operate apache, MySQL easily from it. It is easily available for windows 
 & windows & another platform
+
+## Algorithms Design
+STEP 1: GO TO SYSTEMS HOME PAGE
+STEP 2: ASK USER TO UPLOAD THE RESUME.
+STEP 3: IF IN PDF FORMAT THE GO FORWARD. 
+ELSE THROUGH AN ERROR AND GO TO STEP 2
+STEP 4: STORE IT IN SYSTEM.
+STEP 5: PROCESS RESUME USING PDF2TEXT
+STEP 6: PERFORM NLP PROCESSING
+STEP 7: FETCH THE USER INFORMATION
+STEP 8: PASS SKILL RECOMMENDATION. GENERATE SKILL 
+RECOMMENDATIONS BASED ON USER’S SKILLS.
+STEP 9: STORE USER DATA.
+STEP 10: END 
+
+![image](https://github.com/SurabhiJadhav/Smart_Resume_Analyser/assets/130740664/15f45772-de10-4266-a05e-4dd5aae35715)
