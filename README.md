@@ -156,6 +156,7 @@ This code is used for the course recommender, it will fetch the user’s skills,
 
 ## ⭐ PDF Showing Code
 This code is used to show the uploaded resume in the user interface, it simply allows to display the uploaded resume into the system.
+
     # def show_pdf(file_path):
         with open(file_path, "rb") as f:
             base64_pdf = base64.b64encode(f.read()).decode('utf-8')
@@ -165,6 +166,7 @@ This code is used to show the uploaded resume in the user interface, it simply a
 
 ## ⭐ Insert user’s Data Code
 This code is used to insert the user data into our database.
+
     # Definsert_data(name,email,mobile,timestamp,no_of_pages,reco_field,cand_level,skills,recommended_skills,courses):
         DB_table_name = 'user_data'
         insert_sql = "insert into " + DB_table_name + """
@@ -175,8 +177,84 @@ This code is used to insert the user data into our database.
 
 ## ⭐ Visualization Code (Pie Chart)
 This code is used display the Pie Chart for data analytics.
+
     # labels = plot_data.Predicted_Field.unique()
     values = plot_data.Predicted_Field.value_counts()
     st.subheader("**Pie-Chart📈 for Predicted Field Recommendations**")
     fig = px.pie(df, values=values, names=labels, title='Predicted Field according to the Skills')
     st.plotly_chart(fig)
+
+
+#### Home page of System: -
+This will be main page of our web application, user just need to visit the URL. It is just one-page application, user doesn’t need to do any Registration process. Everyone can use it directly. 
+Screenshot: - 1 Homepage
+
+#### User Role Selection: -
+User can select the role from the left panel. There is 2 roles given. One is normal user another one is Admin role. In admin role, credentials are required.
+![image](https://github.com/SurabhiJadhav/Smart_Resume_Analyser/assets/130740664/a0f5dbcb-c994-4d27-a592-39e0e9282751)
+
+Screenshot: - 2 User role selection
+
+#### Resume Uploader: - 
+In normal user, it’s have the facility to upload the resume. User can upload the PDF by click on browse button or by just drag & drop. Currently PDF format is only supported.
+![image](https://github.com/SurabhiJadhav/Smart_Resume_Analyser/assets/130740664/5c61fd7a-853b-4867-b97e-7e0fda7fc805)
+
+Screenshot: - 3 Resume Uploader
+
+#### Resume Display: -
+After the uploading the resume, it will take time to upload the resume, after successfully completion it will show the uploaded resume into our application.
+![image](https://github.com/SurabhiJadhav/Smart_Resume_Analyser/assets/130740664/1d5fb942-5ef2-42ee-940f-4e77517576a7)
+
+Screenshot: - 3 Resume Uploader
+
+#### User Information: - 
+Our system will fetch the user’s information from the resume, it will display this information into our application. It will predict the user at intermediate level or fresher or experienced. 
+![image](https://github.com/SurabhiJadhav/Smart_Resume_Analyser/assets/130740664/72523877-41ea-41b8-aeb5-ae18883fa820)
+
+Screenshot: - 5 User Information
+
+#### Skills & Career Recommendations: -
+Our system will fetch the user’s skills from the resume, and it will give the career recommendations based on the skills that you have. 
+![image](https://github.com/SurabhiJadhav/Smart_Resume_Analyser/assets/130740664/d44c2ca9-9544-4a97-a6bc-5f1a9b8ad519)
+
+Screenshot: - 6 Skills & Career Recommendations
+
+#### Courses Recommendations: -
+Our System will show the courses recommendations based on the user’s skills. All the courses & certifications are combinations of free and paid. User can see 1-10 courses from the recommendations. User can scale the courses and they can navigate to course by just clicking on them.
+![image](https://github.com/SurabhiJadhav/Smart_Resume_Analyser/assets/130740664/5e2435e8-9229-4b7e-9c24-76ada3fa9a3b)
+
+Screenshot: - 7 Courses Recommendations
+
+#### Resume writing Tips & Tricks: -
+Our system will give you the topics recommendations which you can add into the resume, like declarations, hobbies, achievements or objective, it will suggest to you add if you haven’t added then
+![image](https://github.com/SurabhiJadhav/Smart_Resume_Analyser/assets/130740664/40d2efd4-0ec6-468d-9987-7ec564a9acdb)
+
+Screenshot: - 8 Resume writing Tips & Tricks
+
+#### Resume Score: -
+Our system will generate the score of the user from the uploaded resume.
+ ![image](https://github.com/SurabhiJadhav/Smart_Resume_Analyser/assets/130740664/e3354b24-cc08-451d-bc04-f3c097e8e40f)
+
+ Screenshot: - 9 Resume Score
+
+#### Admin side: -
+In selection panel, if you will select admin side, then it will show you the Admin Login panel. With default credentials admin login.
+![image](https://github.com/SurabhiJadhav/Smart_Resume_Analyser/assets/130740664/c4fc87a9-fe11-45a4-ac9a-47eb047b05b9)
+
+ Screenshot: - 12 Admin’s side
+
+#### Admin Side User report: -
+Admin can see the user’s data which is collected from the user’s resume.
+![image](https://github.com/SurabhiJadhav/Smart_Resume_Analyser/assets/130740664/4b6183b7-a154-42f1-b728-311ec35023a6)
+
+Screenshot: - 13 Admin Side User report
+
+#### Admin Side Visualizations: -
+Our system will display the visualizations based on the data. It is Pie-Chart for predicted field recommendations. Next screenshot chart is for 
+ ![image](https://github.com/SurabhiJadhav/Smart_Resume_Analyser/assets/130740664/6215e0ff-ac4d-4516-851b-a7bdf96cfc32)
+ Screenshot: - 14 Admin Side Visualizations
+ 
+ ![image](https://github.com/SurabhiJadhav/Smart_Resume_Analyser/assets/130740664/82f40271-8158-4f70-aa5f-1a798e57e359)
+
+ Screenshot: - 15 Admin Side Visualizations
+
