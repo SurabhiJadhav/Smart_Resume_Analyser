@@ -22,67 +22,65 @@ Anyone who wants to analyze their skill and want to understand how to make their
 This application doesn’t have any monetary service to take the charges according to the usage, any user can access this application in freely. Every user can access 
 this application.
 
-Requirement and Analysis:
--> Scheduling and planning for the software for building the project.
--> This chapter defines all the problems in the existing technologies and each will be specified in depth.
--> functional and non-functional requirements of the web-application.
+### Requirement and Analysis:
 Selection of the Software with Justification: -
-̶ Python programming language
-̶ PyCharm IDE
-̶ Streamlit
-̶ NLTK
-̶ XAMP
-̶ GitHub 
+    ̶  Python programming language
+    ̶  PyCharm IDE
+    ̶  Streamlit
+    ̶  NLTK
+    ̶  XAMP
+    ̶  GitHub 
 
 ## Tools & Technologies: -
 
--> NLTK & Pyparser for NLP:
+🔹 NLTK & Pyparser for NLP:
 NLTK can be used for:
-  ̶ Find text to analyse
-  ̶ Pre-process your text for analysis
-  ̶ Analyses your text
-  ̶ Create visualizations based on your analysis
+  ̶  Find text to analyse
+  ̶  Pre-process your text for analysis
+  ̶  Analyses your text
+  ̶  Create visualizations based on your analysis
   
--> Streamlit for Backend:
+🔹 Streamlit for Backend:
 Streamlit is special framework for handling the Data intensive 
 applications, we are using it because it’s have amazing UI components, we 
 don’t need to implement HTML+ CSS, everything will be handled by 
 python code. It is very easy to use. In this deployment is also very easy.
 
--> PDFMiner for extracting PDF
+🔹 PDFMiner for extracting PDF
 PDFMiner, a Python library, to extract text from PDF files and perform 
 text analysis.
 PDFMiner attempts to reconstruct some of those structures by using 
 heuristics on the positioning of characters. This works well for sentences 
 and paragraphs because meaningful groups of nearby characters can be 
 made.
--> Base64 for PDF displaying
+
+🔹 Base64 for PDF displaying
 Sometimes you have to send or output a PDF file within a text document 
 (for example, HTML, JSON, XML), but you cannot do this because binary 
 characters will damage the syntax of the text document. To prevent this, 
 for example, you can encode PDF file to Base64 and embed it using the 
 data URI.
 
--> Pillow:
+🔹 Pillow:
 Pillow also allows us to convert an image to a NumPy array. After converting 
 an image to NumPy array we can read it in using PIL.
 
--> Numpy:
+🔹 Numpy:
 NumPy aims to provide an array object that is up to 50x faster than 
 traditional Python lists.
 
--> Pycharm IDE:
+🔹 Pycharm IDE:
 PyCharm is professional IDE which is developed by JetBrains. The 
 features which are offered by PyCharm Community version is Intelligent 
 Python editor, Code debugger, Code inspection, VCS support and many 
 more related to the User Interface. 
 
--> BS4 and requests for Web Scraping:
+🔹 BS4 and requests for Web Scraping:
 Using Beautiful Soup, you will have no problem scraping information from web 
 pages. By layering Pythonic idioms on top of HTML or XML parsers, iterator,
 search, and modification functions can be performed.
 
--> XAMP
+🔹 XAMP
 It is open source control panel which is easy to use and maintain the 
 apache, database, and PhpMyAdmin. It is very easy to operate. We can 
 operate apache, MySQL easily from it. It is easily available for windows 
@@ -90,16 +88,31 @@ operate apache, MySQL easily from it. It is easily available for windows
 
 ## Algorithms Design
 STEP 1: GO TO SYSTEMS HOME PAGE
+
 STEP 2: ASK USER TO UPLOAD THE RESUME.
+
 STEP 3: IF IN PDF FORMAT THE GO FORWARD. 
 ELSE THROUGH AN ERROR AND GO TO STEP 2
+
 STEP 4: STORE IT IN SYSTEM.
+
 STEP 5: PROCESS RESUME USING PDF2TEXT
+
 STEP 6: PERFORM NLP PROCESSING
+
 STEP 7: FETCH THE USER INFORMATION
+
 STEP 8: PASS SKILL RECOMMENDATION. GENERATE SKILL 
 RECOMMENDATIONS BASED ON USER’S SKILLS.
+
 STEP 9: STORE USER DATA.
+
 STEP 10: END 
 
 ![image](https://github.com/SurabhiJadhav/Smart_Resume_Analyser/assets/130740664/15f45772-de10-4266-a05e-4dd5aae35715)
+
+## Security Issues 
+◾ We have user and Adim login.
+◾ Web application security refers to a variety of processes, technologies, or methods 
+for protecting web servers, web applications, and web services such as APIs from 
+attack by Internet-based threats
